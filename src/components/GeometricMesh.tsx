@@ -14,11 +14,11 @@ export default function GeometricMesh() {
 
     let animationId: number;
     const nodes: { x: number; y: number; vx: number; vy: number; radius: number }[] = [];
-    const nodeCount = 35;
-    const connectionDistance = 150;
-    const nodeSpeed = 0.15;
-    // #14141e - 10 shades lighter than #050508
-    const baseColor = { r: 20, g: 20, b: 30 };
+    const nodeCount = 40;
+    const connectionDistance = 180;
+    const nodeSpeed = 0.2;
+    // Cyan-tinted color for visibility
+    const baseColor = { r: 0, g: 180, b: 200 };
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -33,7 +33,7 @@ export default function GeometricMesh() {
           y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * nodeSpeed,
           vy: (Math.random() - 0.5) * nodeSpeed,
-          radius: Math.random() * 1.5 + 0.5
+          radius: Math.random() * 2 + 1
         });
       }
     };
@@ -59,7 +59,7 @@ export default function GeometricMesh() {
         // Draw node
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${baseColor.r}, ${baseColor.g}, ${baseColor.b}, 0.6)`;
+        ctx.fillStyle = `rgba(${baseColor.r}, ${baseColor.g}, ${baseColor.b}, 0.5)`;
         ctx.fill();
 
         // Draw connections
@@ -70,7 +70,7 @@ export default function GeometricMesh() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < connectionDistance) {
-            const alpha = (1 - dist / connectionDistance) * 0.3;
+            const alpha = (1 - dist / connectionDistance) * 0.2;
             ctx.beginPath();
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(other.x, other.y);
@@ -102,7 +102,7 @@ export default function GeometricMesh() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-40"
+      className="fixed inset-0 pointer-events-none z-[1] opacity-60"
       aria-hidden="true"
     />
   );
