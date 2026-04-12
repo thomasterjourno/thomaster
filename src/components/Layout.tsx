@@ -3,7 +3,7 @@
 import { ReactNode, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Scanlines from './Scanlines';
+import GeometricMesh from './GeometricMesh';
 
 interface LayoutProps {
   children: ReactNode;
@@ -27,9 +27,8 @@ export default function Layout({ children }: LayoutProps) {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-      <div className="noise" aria-hidden="true" />
+      <GeometricMesh />
       <div className="gradient-bg" aria-hidden="true" />
-      <Scanlines />
       <Navbar />
       <main id="main-content">
         {children}
