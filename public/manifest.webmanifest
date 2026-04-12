@@ -1,0 +1,38 @@
+{
+  "name": "Thom Aster — Investigative Journalist",
+  "short_name": "Thom Aster",
+  "description": "Independent investigative journalism on surveillance, geopolitics, and institutional accountability.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#00d4ff",
+  "categories": ["news", "magazine"],
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Articles",
+      "short_name": "Articles",
+      "description": "Read investigative articles",
+      "url": "/articles"
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Contact Thom Aster",
+      "url": "/contact"
+    }
+  ]
+}

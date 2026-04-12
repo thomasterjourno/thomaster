@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* ===== CSS VARIABLES ===== */
+:root {
+  --bg-primary: #050508;
+  --bg-secondary: #0a0a10;
+  --bg-tertiary: #111118;
+  --bg-card: rgba(15, 15, 25, 0.6);
+  
+  --text-primary: #e8e8f0;
+  --text-secondary: #a0a0b0;
+  --text-muted: #606070;
+  
+  --accent: #00d4ff;
+  --accent-dim: #0088aa;
+  --accent-glow: rgba(0, 212, 255, 0.3);
+  
+  --gradient-1: linear-gradient(135deg, #00d4ff 0%, #0088aa 100%);
+  --gradient-2: linear-gradient(180deg, rgba(0,212,255,0.1) 0%, transparent 50%);
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+  
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  
+  --max-width: 1200px;
+  --nav-height: 70px;
+}
+
+/* ===== BASE STYLES ===== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== BACKGROUND EFFECTS ===== */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(0, 150, 200, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 40% at 20% 80%, rgba(0, 100, 150, 0.05) 0%, transparent 50%);
+  will-change: transform;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 500;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+/* ===== FOCUS STYLES ===== */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== CUSTOM UTILITIES ===== */
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent), #fff, var(--accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050508;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a1420;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0088aa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bg)" />
+  
+  <!-- Grid lines -->
+  <g opacity="0.1">
+    <path d="M0 150 L1200 150" stroke="#00d4ff" stroke-width="1" />
+    <path d="M0 315 L1200 315" stroke="#00d4ff" stroke-width="1" />
+    <path d="M0 480 L1200 480" stroke="#00d4ff" stroke-width="1" />
+    <path d="M300 0 L300 630" stroke="#00d4ff" stroke-width="1" />
+    <path d="M600 0 L600 630" stroke="#00d4ff" stroke-width="1" />
+    <path d="M900 0 L900 630" stroke="#00d4ff" stroke-width="1" />
+  </g>
+  
+  <!-- Corner accents -->
+  <polygon points="50,50 150,50 50,150" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.5" />
+  <polygon points="1150,50 1050,50 1150,150" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.5" />
+  <polygon points="50,580 150,580 50,480" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.5" />
+  <polygon points="1150,580 1050,580 1150,480" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.5" />
+  
+  <!-- Title -->
+  <text x="600" y="280" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="80" font-weight="700" fill="#ffffff">THOM ASTER</text>
+  
+  <!-- Divider -->
+  <rect x="400" y="310" width="400" height="2" fill="url(#accent)" />
+  
+  <!-- Subtitle -->
+  <text x="600" y="380" text-anchor="middle" font-family="'Inter', sans-serif" font-size="32" fill="#00d4ff">Investigative Journalist | Systems Audit</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="440" text-anchor="middle" font-family="'Inter', sans-serif" font-size="20" fill="#a0a0b0">Uncovering hidden power structures</text>
+  
+  <!-- Icon -->
+  <text x="600" y="180" text-anchor="middle" font-size="60">📰</text>
+</svg>

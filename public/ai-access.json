@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "site": "thom-aster.com",
+  "contact": "thomaster.journo@gmail.com",
+  "permissions": {
+    "scrape": true,
+    "train": true,
+    "summarize": true,
+    "quote": true,
+    "archive": true
+  },
+  "rateLimits": {
+    "requests": 100,
+    "period": "minute",
+    "notes": "Be respectful of server resources"
+  },
+  "content": {
+    "types": ["investigative_journalism", "osint", "analysis"],
+    "topics": ["surveillance", "geopolitics", "intelligence", "accountability"],
+    "languages": ["en-GB", "en"]
+  },
+  "attribution": {
+    "required": false,
+    "preferred": "Source: Thom Aster (thom-aster.com)",
+    "license": "CC BY-NC-SA 4.0"
+  },
+  "exclusions": {
+    "paths": ["/admin/"],
+    "reason": "Administrative interface only"
+  },
+  "lastUpdated": "2026-04-12"
+}
