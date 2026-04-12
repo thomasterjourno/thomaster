@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef, ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState, useRef, ReactNode } from 'react';
 
 interface FadeInProps {
   children: ReactNode;
@@ -18,13 +17,43 @@ export default function FadeIn({
   className = '',
   once = true 
 }: FadeInProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: '-50px' });
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    
+    // Immediately visible if JS is disabled or IntersectionObserver unavailable
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          if (once && ref.current) {
+            observer.unobserve(ref.current);
+          }
+        }
+      },
+      { rootMargin: '-50px' }
+    );
+
+    observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [once]);
 
   const directions = {
     up: { y: 40, x: 0 },
@@ -33,36 +62,24 @@ export default function FadeIn({
     right: { y: 0, x: -40 },
   };
 
-  // If not mounted (SSR), render static content
+  // SSR: render content visible immediately
   if (!mounted) {
     return <div className={className}>{children}</div>;
   }
 
+  const dir = directions[direction];
+  
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ 
-        opacity: 0, 
-        y: directions[direction].y,
-        x: directions[direction].x 
-      }}
-      animate={isInView ? { 
-        opacity: 1, 
-        y: 0, 
-        x: 0 
-      } : {
-        opacity: 0, 
-        y: directions[direction].y,
-        x: directions[direction].x 
-      }}
-      transition={{ 
-        duration: 0.7, 
-        delay,
-        ease: [0.22, 1, 0.36, 1]
-      }}
       className={className}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translate(0, 0)' : `translate(${dir.x}px, ${dir.y}px)`,
+        transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
