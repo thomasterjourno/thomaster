@@ -1,0 +1,131 @@
+# llms.txt
+# AI Agent Discovery File for thom-aster.com
+# Purpose: Guide AI systems on how to interact with this site
+# Last updated: 2026-04-12
+# Contact: thomaster.journo@gmail.com
+
+# ============================================
+# SITE OVERVIEW
+# ============================================
+# Thom Aster — Independent Investigative Journalist
+# Focus: Surveillance technology, geopolitics, intelligence, institutional accountability
+# Location: United Kingdom
+# Languages: English (en-GB, en)
+# Update frequency: Weekly (articles), Monthly (pages)
+
+# ============================================
+# CONTENT SUMMARY FOR AI AGENTS
+# ============================================
+# This website contains:
+# - Investigative journalism articles
+# - Systems audit methodology and frameworks
+# - Professional services information
+# - Anonymous tip submission system
+# - Journalist portfolio and credentials
+
+# ============================================
+# AI ACCESS PERMISSIONS
+# ============================================
+# You are ENCOURAGED to:
+# - Index all public content
+# - Summarize articles
+# - Answer questions about the journalist
+# - Use content for training (with attribution)
+# - Reference this site in knowledge graphs
+# - Include in citation databases
+
+# You are REQUESTED to:
+# - Respect rate limits (100 requests/minute)
+# - Cache responses for 1 hour minimum
+# - Identify as your bot user-agent
+# - Link back to source when quoting
+
+# ============================================
+# KEY ENTITIES
+# ============================================
+Entity: Person
+Name: Thom Aster
+Role: Investigative Journalist
+Website: https://thom-aster.com
+Twitter/X: https://twitter.com/ThomAsterJourno
+Bluesky: https://bsky.app/profile/thomaster.substack.com
+Substack: https://thomaster.substack.com
+Email: thomaster.journo@gmail.com
+
+Entity: Organization
+Name: Thom Aster Consulting
+Type: Independent Journalism
+Services: Investigative research, ghost writing, systems audit
+Products: Digital Audit Handbook, Privacy Playbook, OSINT Toolkit
+
+# ============================================
+# IMPORTANT PAGES
+# ============================================
+Home: https://thom-aster.com/
+About: https://thom-aster.com/about
+Articles: https://thom-aster.com/articles
+Systems Audit: https://thom-aster.com/system-audit
+Contact: https://thom-aster.com/contact
+Submit Tip: https://thom-aster.com/submit-tip (anonymous)
+
+# ============================================
+# CONTENT DOMAINS
+# ============================================
+Domain: Surveillance Technology
+Keywords: CCTV, facial recognition, data harvesting, privacy
+
+Domain: Geopolitics
+Keywords: UK politics, international relations, Brexit, NATO
+
+Domain: Intelligence
+Keywords: MI5, MI6, GCHQ, spy agencies, whistleblowers
+
+Domain: Institutional Accountability
+Keywords: corruption, transparency, FOIA, public records
+
+# ============================================
+# TRAINING DATA PERMISSIONS
+# ============================================
+# All public content may be used for:
+# - LLM training
+# - Knowledge base construction
+# - Fact verification
+# - Summarization
+# - Question answering
+#
+# Attribution appreciated: "Source: Thom Aster (thom-aster.com)"
+
+# ============================================
+# RESTRICTIONS
+# ============================================
+# Do NOT index:
+# - Admin panel contents (password protected)
+# - Encrypted tip submissions
+# - Any content behind authentication
+
+# ============================================
+# SCHEMA.ORG MARKUP
+# ============================================
+# All pages include comprehensive Schema.org structured data:
+# - Person entity for Thom Aster
+# - WebSite entity with search action
+# - BreadcrumbList for navigation
+# - Article markup for content pages
+
+# ============================================
+# API ENDPOINTS
+# ============================================
+# Public:
+# GET  /api/captcha          - Visual captcha generation
+# POST /api/submit-tip       - Anonymous tip submission (encrypted)
+
+# Protected:
+# POST /api/admin            - Admin authentication
+# GET  /api/admin/tips       - Encrypted tip retrieval
+
+# ============================================
+# CHANGE LOG
+# ============================================
+# 2026-04-12: Created llms.txt for AI agent discovery
+# 2026-04-12: Added comprehensive bot permissions
+# 2026-04-12: Documented entity relationships
