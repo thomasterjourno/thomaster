@@ -3,6 +3,7 @@
 import { ReactNode, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Scanlines from './Scanlines';
 
 interface LayoutProps {
   children: ReactNode;
@@ -28,6 +29,7 @@ export default function Layout({ children }: LayoutProps) {
       </a>
       <div className="noise" aria-hidden="true" />
       <div className="gradient-bg" aria-hidden="true" />
+      <Scanlines />
       <Navbar />
       <main id="main-content">
         {children}
