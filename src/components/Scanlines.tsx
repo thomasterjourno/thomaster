@@ -23,8 +23,8 @@ export default function Scanlines() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Subtle scanlines
-      ctx.fillStyle = 'rgba(0, 212, 255, 0.015)';
+      // Subtle scanlines - increased visibility
+      ctx.fillStyle = 'rgba(0, 212, 255, 0.04)';
       const lineHeight = 4;
       const gap = 6;
       
@@ -32,9 +32,9 @@ export default function Scanlines() {
         ctx.fillRect(0, y, canvas.width, lineHeight);
       }
       
-      // Occasional flicker line
-      if (Math.random() > 0.98) {
-        ctx.fillStyle = 'rgba(0, 212, 255, 0.08)';
+      // Occasional flicker line - more visible
+      if (Math.random() > 0.95) {
+        ctx.fillStyle = 'rgba(0, 212, 255, 0.15)';
         const flickerY = Math.random() * canvas.height;
         ctx.fillRect(0, flickerY, canvas.width, 2);
       }
@@ -56,7 +56,7 @@ export default function Scanlines() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-[1] opacity-60"
+      className="fixed inset-0 pointer-events-none z-[5] opacity-80"
       aria-hidden="true"
     />
   );
