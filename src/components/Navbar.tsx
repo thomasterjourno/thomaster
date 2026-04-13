@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/articles', label: 'Articles' },
+  { href: '/services', label: 'Services' },
   { href: '/system-audit', label: 'Systems Audit' },
   { href: '/contact', label: 'Contact', isCTA: true },
 ];
